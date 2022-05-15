@@ -1,0 +1,79 @@
+@import "mixins";
+@import "button";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  @include set-back-color("back");
+  @include set-color("black");
+  height: 100%;
+  font-family: monospace;
+  font-size: 24px;
+  font-weight: 400;
+  color: #e9e9e9;
+}
+
+.wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+main {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: 70px repeat(5, 60px);
+  gap: 1px;
+}
+
+.input {
+  padding: 0 12px;
+  font-size: 38px;
+  line-height: 80px;
+  text-align: right;
+  background-color: #262627;
+}
+
+.col {
+  &-2 {
+    grid-column: span 2;
+  }
+
+  &-4 {
+    grid-column: span 4;
+  }
+}
+
+.radius {
+  &-top {
+    &-left {
+      border-top-left-radius: $border-radius;
+    }
+
+    &-right {
+      border-top-right-radius: $border-radius;
+    }
+  }
+
+  &-bottom {
+    &-left {
+      border-bottom-left-radius: $border-radius;
+    }
+
+    &-right {
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+$colors: (
+  "black": #000,
+  "white": #fff,
+  "gray": #c4c4c4,
+  "back": #c4c4c459,
+);
+
+@mixin set-back-color($color) {
+  background-color: map-get($colors, $color);
+}
+
+@mixin set-color($color) {
+  color: map-get($colors, $color);
+}
+
+@mixin set-font($size: inherit, $weight: 400) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin after() {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
